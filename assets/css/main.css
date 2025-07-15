@@ -1,10 +1,4 @@
-/**
-* Template Name: Style
-* Template URL: https://bootstrapmade.com/style-bootstrap-portfolio-template/
-* Updated: Jul 02 2025 with Bootstrap v5.3.7
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 
 @charset "UTF-8";
 
@@ -535,7 +529,7 @@ section,
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("../img/bg/abstract-bg-1.webp") no-repeat center center;
+  background: url("../img/bg/abstract3.jpg") no-repeat center center;
   background-size: cover;
   opacity: 0.08;
   z-index: 1;
