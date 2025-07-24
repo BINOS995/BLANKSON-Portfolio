@@ -676,36 +676,21 @@
               <h3>Get In Touch</h3>
               <p>Feel free to reach out for collaborations, freelance projects, or just to say hi! I'm open to exciting opportunities and conversations</p>
 
-              <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <form onsubmit="document.getElementById('googleFormModal').style.display='block'; return false;" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
                 <div class="row gy-4">
-
-                  <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                  </div>
-
-                  <div class="col-md-6 ">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                  </div>
-
-                  <div class="col-12">
-                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                  </div>
-
-                  <div class="col-12">
-                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                  </div>
-
                   <div class="col-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
                     <button type="submit" class="btn">Send Message</button>
                   </div>
-
                 </div>
               </form>
 
+              <!-- Modal Popup for Google Form -->
+              <div id="googleFormModal" class="modern-modal">
+                <div class="modern-modal-content">
+                  <button class="modern-modal-close" onclick="document.getElementById('googleFormModal').style.display='none'">&times;</button>
+                  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdKV-8KI-OTRJK0Bdf6EOuGCmFy29MmL0Rm-3HWz0lRTu5mGQ/viewform?embedded=true" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -756,5 +741,67 @@
   <script src="assets/js/main.js"></script>
 
 </body>
+<style>
+/* Modern Modal Styles */
+.modern-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(30, 41, 59, 0.85); /* dark blue overlay */
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s;
+}
+.modern-modal-content {
+  position: relative;
+  width: 95vw;
+  max-width: 520px;
+  height: 80vh;
+  margin: auto;
+  background: linear-gradient(135deg, #fff 80%, #e0e7ef 100%);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(30,41,59,0.18);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e0e7ef;
+  animation: modalPop 0.4s;
+}
+.modern-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  background: #fff;
+  border: none;
+  font-size: 2.2rem;
+  color: #1e293b;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(30,41,59,0.08);
+  transition: background 0.2s;
+}
+.modern-modal-close:hover {
+  background: #e0e7ef;
+}
+.modern-modal-content iframe {
+  border: none;
+  flex: 1;
+  border-radius: 0 0 18px 18px;
+  margin-top: 0;
+  width: 100%;
+  height: 100%;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes modalPop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+</style>
 
 </html>
